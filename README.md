@@ -11,6 +11,39 @@
 - 簡易 DUT 及對應 top_tb 測試平台
 - 練習範例對應原書各章節
 
+### Keywords
+CH2
+
+factory, uvm_component_utils
+    run_test, uvm_test_top, main_phase
+
+objection, raise_objection, drop_objection
+    $time, simulation time, cpu time
+
+virtual interface
+    module -> interface
+    class -> virtual interface
+
+build_phase
+    config_db, set, get
+
+uvm_fatal vs. uvm_info
+
+
+Transaction
+randomize, post_randomize
+uvm_sequence_item
+uvm_object_utils
+
+uvm_env
+
+---
+
+
+CH3
+
+.
+
 ## QuestaSim 執行方式
 
 1. **切換目錄：**
