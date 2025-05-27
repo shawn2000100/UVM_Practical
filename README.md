@@ -1,15 +1,36 @@
 # UVM Practice (Based on 《UVM实战》by 张强)
 
-本專案為 SystemVerilog UVM 驗證練習，依照張強《UVM实战 卷Ⅰ》教材與開源範例實作。方便自學與面試作品集展示。
+本專案為 SystemVerilog UVM 驗證練習，依照張強《UVM实战 卷Ⅰ》教材與開源範例實作。方便自學與作品集展示。
+
 
 ## 參考資料
 - [UVM实战 卷Ⅰ PDF](https://github.com/CodeMadUser/FPGA-1/blob/master/src/docs/UVM%E5%AE%9E%E6%88%98%20%E5%8D%B7%E2%85%A0.pdf)
 - [siyueyinghua/UVMInPracticesByZhangQiang](https://github.com/siyueyinghua/UVMInPracticesByZhangQiang/tree/master/puvm/src)
 
+
 ## 專案內容
 - 基本 UVM 元件：env, agent, driver, monitor, sequence, scoreboard, test
 - 簡易 DUT 及對應 top_tb 測試平台
 - 練習範例對應原書各章節
+
+
+### NOTE: UVM Phase
+UVM Common Phases: https://verificationacademy.com/verification-methodology-reference/uvm/docs_1.2/html/files/base/uvm_common_phases-svh.html#uvm_run_phase
+
+
+| UVM Phases | Direction |
+| --- | --- |
+| build_phase | uvm_topdown_phase |
+| connect_phase | uvm_bottomup_phase |
+| end_of_elaboration_phase | uvm_bottomup_phase |
+| start_of_simulation_phase | uvm_bottomup_phase |
+| run_phase | parallel |
+| extract_phase | uvm_bottomup_phase |
+| check_phase | uvm_bottomup_phase |
+| report_phase | uvm_bottomup_phase |
+| final_phase | uvm_topdown_phase |
+
+
 
 ### Keywords
 CH.2_2
@@ -29,6 +50,10 @@ build_phase
     config_db, set, get
 
 uvm_fatal vs. uvm_info
+
+
+---
+
 
 CH.2_3
 Transaction
@@ -75,12 +100,17 @@ Gen transaction:
 
 base_test & uvm_test
 
+
 ---
 
 
 CH3
 
-.
+TODO
+
+
+---
+
 
 ## QuestaSim 執行方式
 
@@ -105,8 +135,3 @@ CH3
       run -all
       ```
     - 或用 GUI 加入信號觀察波形
-
-## 目的
-
-- 熟悉 UVM verification 基礎結構與流程
-- 作為求職面試或自我驗證練習之用
