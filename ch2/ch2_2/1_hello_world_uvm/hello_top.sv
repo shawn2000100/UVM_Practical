@@ -31,7 +31,7 @@ module top_tb;
     initial begin
         my_driver drv;         // 宣告 driver handle
         drv = new("drv", null); // 建立 driver 物件
-        drv.main_phase(null);   // 直接呼叫 main_phase 執行 (簡化寫法)
+        drv.main_phase(null);   // 直接呼叫 main_phase 執行
         $finish();              // 結束模擬
     end
 
