@@ -1,1 +1,41 @@
-# UVM_Practical
+# UVM Practice (Based on 《UVM实战》by 张强)
+
+本專案為 SystemVerilog UVM 驗證練習，依照張強《UVM实战 卷Ⅰ》教材與開源範例實作。方便自學與面試作品集展示。
+
+## 參考資料
+- [UVM实战 卷Ⅰ PDF](https://github.com/CodeMadUser/FPGA-1/blob/master/src/docs/UVM%E5%AE%9E%E6%88%98%20%E5%8D%B7%E2%85%A0.pdf)
+- [siyueyinghua/UVMInPracticesByZhangQiang](https://github.com/siyueyinghua/UVMInPracticesByZhangQiang/tree/master/puvm/src)
+
+## 專案內容
+- 基本 UVM 元件：env, agent, driver, monitor, sequence, scoreboard, test
+- 簡易 DUT 及對應 top_tb 測試平台
+- 練習範例對應原書各章節
+
+## QuestaSim 執行方式
+
+1. **切換目錄：**
+    ```sh
+    cd src    # 或進入有 .sv 檔案的目錄
+    ```
+
+2. **編譯：**
+    ```sh
+    vlog *.sv
+    ```
+
+3. **模擬：**
+    ```sh
+    vsim top_tb
+    ```
+
+4. **執行/看波形：**
+    - 在 transcript 輸入：
+      ```sh
+      run -all
+      ```
+    - 或用 GUI 加入信號觀察波形
+
+## 目的
+
+- 熟悉 UVM verification 基礎結構與流程
+- 作為求職面試或自我驗證練習之用
