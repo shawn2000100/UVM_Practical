@@ -12,10 +12,11 @@
 - 練習範例對應原書各章節
 
 ### Keywords
-CH2
+CH.2_2
 
 factory, uvm_component_utils
     run_test, uvm_test_top, main_phase
+    type_name：：type_id：：create
 
 objection, raise_objection, drop_objection
     $time, simulation time, cpu time
@@ -29,13 +30,50 @@ build_phase
 
 uvm_fatal vs. uvm_info
 
-
+CH.2_3
 Transaction
-randomize, post_randomize
-uvm_sequence_item
-uvm_object_utils
+    randomize, post_randomize
+    uvm_sequence_item
+    uvm_object_utils
 
-uvm_env
+uvm_env (Container)
+    uvm_component, uvm_tree_hierarchy
+    build_phase, root -> leaf (Top-Down)
+
+uvm_monitor
+input monitor / output monitor
+
+uvm_agent
+    is_active
+    UVM_ACTIVE (default)
+    UVM_PASSIVE
+
+UVM_Tree_Node
+    only uvm_component not uvm_object
+
+reference model & DUT
+    my_monitor & my_model
+    uvm_analysis_port (non-blocking)
+    uvm_tlm_analysis_fifo
+    blocking_get_port
+    connect_phase (Bottom-up)
+
+    exp_port & act_port
+    my_compare
+
+field_automation
+    uvm_field
+
+
+sequence & sequencer
+
+sequence -> sequencer -- transaction --> driver --> DUT
+
+Gen transaction:
+    uvm_do | start_item & finish_item
+
+
+base_test & uvm_test
 
 ---
 
