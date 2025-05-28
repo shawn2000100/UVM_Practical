@@ -21,6 +21,7 @@ endclass
 
 task my_monitor::main_phase(uvm_phase phase);
    my_transaction tr;
+
    while(1) begin
       tr = new("tr");
       collect_one_pkt(tr);
@@ -30,6 +31,7 @@ endtask
 task my_monitor::collect_one_pkt(my_transaction tr);
    bit[7:0] data_q[$]; 
    int psize;
+
    while(1) begin
       @(posedge vif.clk);
       if(vif.valid) break;
@@ -40,6 +42,7 @@ task my_monitor::collect_one_pkt(my_transaction tr);
       data_q.push_back(vif.data);
       @(posedge vif.clk);
    end
+   
    //pop dmac
    for(int i = 0; i < 6; i++) begin
       tr.dmac = {tr.dmac[39:0], data_q.pop_front()};

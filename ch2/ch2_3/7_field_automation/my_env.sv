@@ -24,7 +24,6 @@ class my_env extends uvm_env;
       o_agt.is_active = UVM_PASSIVE;
       mdl = my_model::type_id::create("mdl", this);
       scb = my_scoreboard::type_id::create("scb", this);
-      
       agt_scb_fifo = new("agt_scb_fifo", this);
       agt_mdl_fifo = new("agt_mdl_fifo", this);
       mdl_scb_fifo = new("mdl_scb_fifo", this);

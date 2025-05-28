@@ -14,18 +14,17 @@ class my_transaction extends uvm_sequence_item;
       pload.size <= 1500;
    }
 
+   `uvm_object_utils(my_transaction)
+   function new(string name = "my_transaction");
+      super.new();
+   endfunction
+
    function bit[31:0] calc_crc();
       return 32'h0;
    endfunction
 
    function void post_randomize();
       crc = calc_crc;
-   endfunction
-
-   `uvm_object_utils(my_transaction)
-
-   function new(string name = "my_transaction");
-      super.new();
    endfunction
 
    function void my_print();

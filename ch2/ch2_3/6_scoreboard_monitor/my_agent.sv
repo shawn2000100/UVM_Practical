@@ -6,15 +6,14 @@ class my_agent extends uvm_agent ;
    my_monitor    mon;
    
    uvm_analysis_port #(my_transaction)  ap;
-   
+
+   `uvm_component_utils(my_agent)
    function new(string name, uvm_component parent);
       super.new(name, parent);
    endfunction 
    
    extern virtual function void build_phase(uvm_phase phase);
    extern virtual function void connect_phase(uvm_phase phase);
-
-   `uvm_component_utils(my_agent)
 endclass 
 
 

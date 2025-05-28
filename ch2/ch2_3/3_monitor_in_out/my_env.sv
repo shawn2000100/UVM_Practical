@@ -7,6 +7,7 @@ class my_env extends uvm_env;
    my_monitor i_mon;
    my_monitor o_mon;
 
+   `uvm_component_utils(my_env)
    function new(string name = "my_env", uvm_component parent);
       super.new(name, parent);
    endfunction
@@ -18,6 +19,5 @@ class my_env extends uvm_env;
       o_mon = my_monitor::type_id::create("o_mon", this);
    endfunction
 
-   `uvm_component_utils(my_env)
 endclass
 `endif
